@@ -25,7 +25,9 @@
     <title>API 4.2</title>
 </head>
 <body>
-<?
+<?php
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
     require_once(dirname(__FILE__)."/../../includes/dataObjects/objects/AuthenticationInfo.php");
     require_once(dirname(__FILE__)."/../../includes/impl/4.2/client/AccessManagementClient.php");
@@ -38,7 +40,7 @@
     $docs = isset($_GET["docs"])?$_GET["docs"]:"";
     $client = null;
 
-    $server = "panopto.example.com";
+    $server = "yale.hosted.panopto.com";
     $auth = new AuthenticationInfo("username","password",null);
     switch($which)
     {
